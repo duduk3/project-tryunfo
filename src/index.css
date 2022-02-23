@@ -12,3 +12,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.content {
+  display: flex;
+}
+
+.content h1 {
+  margin: 10px 5px 30px 25px;
+  color:rgba(0, 0, 0, 0.5)
+}
+
+.form {
+  display: flex;
+  width: 85%;
+  flex-direction: column;
+  align-content: center;
+  margin: 10px 10%;
+}
+
+.form input, label, select, textarea {
+  margin: 4px 0 8px;
+}
+
+label {
+  margin: 2px 12px 2px 2px;
+}
+
+input {
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 1.5px solid black ;
+}
+
+#name {
+  border: none;
+  border-bottom: 2px solid black;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+textarea {
+  border: none;
+  border-bottom: 2px solid black;
+  height: 64px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.trunfo {
+  color: brown;
+}
+
