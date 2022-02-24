@@ -2,11 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends React.Component {
+  onSaveButtonClick = () => {
+    console.log(this.state);
+  }
+
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2,
       cardAttr3, cardImage,
-      cardRare, cardTryunfo,
+      cardRare, cardTrunfo,
       isSaveButtonDisabled, onInputChange,
       onSaveButtonClick } = this.props;
     return (
@@ -86,9 +90,9 @@ class Form extends React.Component {
             value={ cardRare }
             onChange={ onInputChange }
           >
-            <option value="normal">normal</option>
-            <option value="raro">raro</option>
-            <option value="muito-raro">muito raro</option>
+            <option>normal</option>
+            <option>raro</option>
+            <option>muito raro</option>
           </select>
         </label>
         <div>
@@ -97,14 +101,14 @@ class Form extends React.Component {
               type="checkbox"
               name="trunfo"
               data-testid="trunfo-input"
-              checked={ cardTryunfo }
+              checked={ cardTrunfo }
               onChange={ onInputChange }
             />
             Super Trybe Trunfo
           </label>
         </div>
         <button
-          type="button"
+          type="submit"
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
@@ -124,7 +128,7 @@ Form.propTypes = {
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
-  cardTryunfo: PropTypes.bool.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
   //   hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
