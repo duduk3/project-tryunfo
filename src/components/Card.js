@@ -16,21 +16,21 @@ class Card extends React.Component {
             <img
               src={ cardImage }
               alt={ cardName }
-              data-testid="image-input"
+              data-testid="image-card"
               className="image"
             />
-            <div data-testid="trunfo-card">{cardTrunfo ? 'Super Tunfo' : ''}</div>
+            {cardTrunfo && <div data-testid="trunfo-card">Super Trunfo</div>}
           </section>
           <p data-testid="description-card">{cardDescription}</p>
           <div>
             <div>
-              <p>{`Attr01......................${cardAttr1}`}</p>
+              <p data-testid="attr1-card">{`Attr01......................${cardAttr1}`}</p>
             </div>
             <div>
-              <p>{`Attr02......................${cardAttr2}`}</p>
+              <p data-testid="attr2-card">{`Attr02......................${cardAttr2}`}</p>
             </div>
             <div>
-              <p>{`Attr03......................${cardAttr3}`}</p>
+              <p data-testid="attr3-card">{`Attr03......................${cardAttr3}`}</p>
             </div>
           </div>
           <p data-testid="rare-card">{cardRare}</p>

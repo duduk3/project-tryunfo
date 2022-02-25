@@ -77,7 +77,7 @@ class Form extends React.Component {
               id="cardImage"
               name="cardImage"
               type="text"
-              data-testid="img-input"
+              data-testid="image-input"
               value={ cardImage }
               onChange={ onInputChange }
             />
