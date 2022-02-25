@@ -25,7 +25,6 @@ class Form extends React.Component {
         <label htmlFor="description">
           Descrição
           <textarea
-            type="text"
             name="cardDescription"
             data-testid="description-input"
             value={ cardDescription }
@@ -72,13 +71,13 @@ class Form extends React.Component {
           </label>
         </div>
         <div>
-          <label htmlFor="img">
+          <label htmlFor="cardImage">
             Imagem
             <input
-              id="img"
+              id="cardImage"
               name="cardImage"
               type="text"
-              data-testid="image-input"
+              data-testid="img-input"
               value={ cardImage }
               onChange={ onInputChange }
             />
@@ -88,6 +87,7 @@ class Form extends React.Component {
           Raridade:
           <select
             name="cardRare"
+            data-testid="rare-input"
             id="rare"
             value={ cardRare }
             onChange={ onInputChange }
