@@ -24,7 +24,7 @@ code {
 
 .form {
   display: flex;
-  width: 85%;
+  width: 50%;
   flex-direction: column;
   align-content: center;
   margin: 10px 10%;
@@ -62,3 +62,11 @@ textarea {
   color: brown;
 }
 
+.card-container {
+  background-color: white;
+  width: 50%;
+}
+
+.image {
+  width: 35%;
+}
