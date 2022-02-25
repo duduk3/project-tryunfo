@@ -8,13 +8,12 @@ class Card extends React.Component {
       cardAttr3, cardImage,
       cardRare, cardTrunfo,
     } = this.props;
-    console.log(this.props);
     return (
       <div>
         <div>
           <section>
             <h2 data-testid="name-card">{cardName}</h2>
-            <img src="dd" alt={ cardImage } data-testid={ cardName } />
+            <img src={ cardImage } alt={ cardName } data-testid="image-input" />
             <div data-testid="trunfo-card">{cardTrunfo ? 'Super Tunfo' : ''}</div>
           </section>
           <p data-testid="description-card">{cardDescription}</p>

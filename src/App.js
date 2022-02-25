@@ -1,37 +1,66 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Card from './components/Card';
 import Form from './components/Form';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      cardData: {},
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardImage: '',
+      cardRare: '',
+      cardTrunfo: false,
     };
-    this.onInputChange = this.onInputChange.bind(this);
+  }
+
+  handleChange = ({ target }) => {
+    const { name, type, checked } = target;
+    const value = type === 'checkbox' ? checked : target.value;
+    this.setState({ [name]: value });
   }
 
   render() {
-    const { cardData } = this.state;
+    const { cardName, cardDescription,
+      cardAttr1, cardAttr2,
+      cardAttr3, cardImage,
+      cardRare, cardTrunfo } = this.state;
     return (
       <div className="content">
         <div>
           <h1>Adicionar nova carta</h1>
-          <Form />
+          <Form
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+            onInputChange={ this.handleChange }
+          />
         </div>
         <div>
           <h1>Pŕe Visulalização</h1>
-          <Card cardData={ cardData } />
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
         </div>
       </div>
     );
   }
 }
-
-App.propTypes = {
-  cardData: PropTypes.object.isRequired,
-};
 
 export default App;
