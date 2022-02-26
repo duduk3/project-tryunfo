@@ -19,21 +19,21 @@ class Card extends React.Component {
               data-testid="image-card"
               className="image"
             />
-            {cardTrunfo && <div data-testid="trunfo-card">Super Trunfo</div>}
+            {cardTrunfo && <p className="st" data-testid="trunfo-card">Super Trunfo</p>}
           </section>
           <p data-testid="description-card">{cardDescription}</p>
           <div>
             <div>
-              <p data-testid="attr1-card">{`Attr01......................${cardAttr1}`}</p>
+              {cardAttr1 && <p data-testid="attr1-card">{`Attr01.......${cardAttr1}`}</p>}
             </div>
             <div>
-              <p data-testid="attr2-card">{`Attr02......................${cardAttr2}`}</p>
+              {cardAttr2 && <p data-testid="attr2-card">{`Attr02.......${cardAttr2}`}</p>}
             </div>
             <div>
-              <p data-testid="attr3-card">{`Attr03......................${cardAttr3}`}</p>
+              {cardAttr3 && <p data-testid="attr3-card">{`Attr03.......${cardAttr3}`}</p>}
             </div>
           </div>
-          <p data-testid="rare-card">{cardRare}</p>
+          {cardName && <p data-testid="rare-card">{cardRare}</p>}
         </div>
       </div>
     );
