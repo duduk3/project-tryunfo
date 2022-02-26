@@ -13,22 +13,43 @@ class App extends React.Component {
       cardAttr2: '',
       cardAttr3: '',
       cardImage: '',
-      cardRare: '',
+      cardRare: 'normal',
       cardTrunfo: false,
+      isSaveButtonDisabled: false,
     };
   }
 
   handleChange = ({ target }) => {
     const { name, type, checked } = target;
     const value = type === 'checkbox' ? checked : target.value;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, this.validate);
+  }
+
+  validate = () => {
+    // const { cardName, cardDescription,
+    //   cardAttr1, cardAttr2, cardAttr3,
+    //   cardImage, cardRare } = this.state;
+    // //https://www.codegrepper.com/code-examples/javascript/min+max+in+regex
+    // /^.{0,90}$/.test(cardAttr1);
+    // /^.{0,90}$/.test(cardAttr2);
+    // /^.{0,90}$/.test(cardAttr3);
+    // if (cardName && cardDescription && cardImage) {
+    //   if(cardAttr1 + cardAttr2 + cardAttr3 <= 210 ) {
+    //   return true;
+    // }
+    console.log(this.state);
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
   }
 
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2,
       cardAttr3, cardImage,
-      cardRare, cardTrunfo } = this.state;
+      cardRare, cardTrunfo, isSaveButtonDisabled,
+    } = this.state;
     return (
       <div className="content">
         <div>
@@ -43,6 +64,8 @@ class App extends React.Component {
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
             onInputChange={ this.handleChange }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onSaveButtonClick={ this.onSubmit }
           />
         </div>
         <div>
