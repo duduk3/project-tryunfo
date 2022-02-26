@@ -16,9 +16,7 @@ class App extends React.Component {
       cardRare: 'normal',
       cardTrunfo: false,
       isSaveButtonDisabled: true,
-    };
-    this.state2 = {
-      data: {},
+      data: [],
     };
   }
 
@@ -55,9 +53,19 @@ class App extends React.Component {
   }
 
   onSubmit = (event) => {
+    const { cardName, cardDescription, cardImage,
+      cardAttr1, cardAttr2, cardAttr3, cardRare } = this.state;
+    const prevData = { cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
+      cardRare };
     event.preventDefault();
-    this.setState2([...data, this.state]);
-    console.log(this.state2.data);
+    this.setState((prev) => ({ data: [...[prev.data], prevData] }));
+    console.log(prevData);
   }
 
   render() {
