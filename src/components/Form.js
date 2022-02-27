@@ -8,9 +8,10 @@ class Form extends React.Component {
     }
     console.log(trunfo);
     return (
-      <label htmlFor="trunfo" className="trunfo">
+      <label htmlFor="cardTrunfo" className="trunfo">
         <input
           type="checkbox"
+          id="cardTrunfo"
           name="cardTrunfo"
           data-testid="trunfo-input"
           checked={ cardTrunfo }

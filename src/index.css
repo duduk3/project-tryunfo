@@ -98,3 +98,9 @@ textarea {
   border-radius: 50%;
   background-color: rgb(218, 76, 76);
 }
+
+.list-container {
+  width: 90%;
+  height: 800px;
+  background-color: blue;
+}

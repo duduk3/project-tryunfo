@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './components/Card';
+import CardList from './components/CardList';
 import Form from './components/Form';
 
 class App extends React.Component {
@@ -90,12 +91,29 @@ class App extends React.Component {
     return validTrunfo;
   }
 
+  // getList = (data) => {
+  //   data.forEach((elem, index) => {
+  //     <Card
+  //       index={ index }
+  //       cardName={ elem.cardName }
+  //       cardDescription={ elem.cardDescription }
+  //       cardAttr1={ elem.cardAttr1 }
+  //       cardAttr2={ elem.cardAttr2 }
+  //       cardAttr3={ elem.cardAttr3 }
+  //       cardImage={ elem.cardImage }
+  //       cardRare={ elem.cardRare }
+  //       cardTrunfo={ elem.cardTrunfo }
+  //     />;
+  //   });
+  // }
+
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
       cardImage, hasTrunfo, cardRare,
       cardTrunfo, data, isSaveButtonDisabled,
     } = this.state;
+    const arrayData = [...data];
     return (
       <div className="container-app">
         <div className="content">
@@ -128,10 +146,11 @@ class App extends React.Component {
               cardRare={ cardRare }
               cardTrunfo={ cardTrunfo }
             />
-            {data.forEach((el) => console.log(el.hasTrunfo))}
           </div>
         </div>
-        {/* <Card dataList={ data } /> */}
+        <div>
+          <CardList arrayList={ arrayData } />
+        </div>
       </div>
     );
   }
