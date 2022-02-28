@@ -21,7 +21,11 @@ class CardList extends React.Component {
                 cardRare={ elem.cardRare }
                 cardTrunfo={ elem.cardTrunfo }
               />
-              <button type="button" onClick={ () => btnRemove(elem.cardName) }>
+              <button
+                type="button"
+                data-testid="delete-button"
+                onClick={ () => btnRemove(elem.cardName) }
+              >
                 Excluir
               </button>
               {' '}
