@@ -52,7 +52,7 @@ class Form extends React.Component {
         </label>
         <div>
           <label htmlFor="cardAttr1">
-            Atrr01
+            Força
             <input
               id="attr01"
               name="cardAttr1"
@@ -67,7 +67,7 @@ class Form extends React.Component {
         </div>
         <div>
           <label htmlFor="attr02">
-            Atrr02
+            Rapidez
             <input
               id="attr02"
               name="cardAttr2"
@@ -82,7 +82,7 @@ class Form extends React.Component {
         </div>
         <div>
           <label htmlFor="attr03">
-            Atrr03
+            Cérebro
             <input
               id="attr03"
               name="cardAttr3"
