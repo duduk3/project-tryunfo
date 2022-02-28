@@ -97,9 +97,11 @@ class App extends React.Component {
     const exitCard = key;
     const arrayData = data.filter((elem) => elem.cardName !== exitCard);
     const trunfoValid = this.trunfoValidate();
-    trunfoValid
-      ? (this.setState({ data: [...arrayData], hasTrunfo: false }))
-      : (this.setState({ data: [...arrayData] }));
+    if (trunfoValid) {
+      (this.setState({ data: [...arrayData], hasTrunfo: false }));
+    } else {
+      (this.setState({ data: [...arrayData] }));
+    }
   }
 
   render() {
