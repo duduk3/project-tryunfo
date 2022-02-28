@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
 class CardList extends React.Component {
@@ -10,8 +9,9 @@ class CardList extends React.Component {
     return (
       <div className="list-container">
         <div className="list-container">
-          { arrayData.map((elem) => (
+          { arrayData.map((elem, index) => (
             <Card
+              key={ index }
               cardName={ elem.cardName }
               cardDescription={ elem.cardDescription }
               cardAttr1={ elem.cardAttr1 }
@@ -27,5 +27,9 @@ class CardList extends React.Component {
     );
   }
 }
+
+CardList.propTypes = {
+  arrayList: PropTypes.node.isRequired,
+};
 
 export default CardList;

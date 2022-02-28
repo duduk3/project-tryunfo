@@ -91,22 +91,6 @@ class App extends React.Component {
     return validTrunfo;
   }
 
-  // getList = (data) => {
-  //   data.forEach((elem, index) => {
-  //     <Card
-  //       index={ index }
-  //       cardName={ elem.cardName }
-  //       cardDescription={ elem.cardDescription }
-  //       cardAttr1={ elem.cardAttr1 }
-  //       cardAttr2={ elem.cardAttr2 }
-  //       cardAttr3={ elem.cardAttr3 }
-  //       cardImage={ elem.cardImage }
-  //       cardRare={ elem.cardRare }
-  //       cardTrunfo={ elem.cardTrunfo }
-  //     />;
-  //   });
-  // }
-
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
