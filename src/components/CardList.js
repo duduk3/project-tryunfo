@@ -3,12 +3,46 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 class CardList extends React.Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   this.state = {
+  //     raridade: '',
+  //     superTrunfo: bool,
+  //     name: '',
+  //   };
+  // }
+
+  // inputChange = ({targe}) {
+  //   this.setState({ [name] })
+  // }
+
+  filterName = (event) => {
+    const { arrayList } = this.props;
+    // const arrayData = [...arrayList];
+    // this.setState({ [name]: value });
+    const arrayData = arrayList.filter((elem) => elem.name === event.target.value);
+    console.log(arrayData);
+  };
+
   render() {
     const { arrayList, btnRemove } = this.props;
     const arrayData = [...arrayList];
+
     return (
       <div className="list-container">
-        <div className="list-container">
+        <div>
+          <label htmlFor="filter-name">
+            Filtros de busca
+            <input
+              id="filter-name"
+              name="name"
+              data-testid="name-filter"
+              onChange={ this.filterName }
+            />
+          </label>
+        </div>
+        <div className="list-content">
           { arrayData.map((elem) => (
             <div key={ elem.cardName }>
               <Card
@@ -38,8 +72,8 @@ class CardList extends React.Component {
 }
 
 CardList.propTypes = {
-  arrayList: PropTypes.node.isRequired,
-  btnRemove: PropTypes.func.isRequired,
-};
+  arrayList: PropTypes.array || PropTypes.string,
+  btnRemove: PropTypes.func,
+}.isRequired;
 
 export default CardList;
