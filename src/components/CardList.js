@@ -11,7 +11,7 @@ class CardList extends React.Component {
         <div className="list-container">
           { arrayData.map((elem, index) => (
             <Card
-              key={ index }
+              key={ `${index}-${elem.cardName}` }
               cardName={ elem.cardName }
               cardDescription={ elem.cardDescription }
               cardAttr1={ elem.cardAttr1 }

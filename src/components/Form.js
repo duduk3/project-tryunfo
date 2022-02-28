@@ -6,7 +6,6 @@ class Form extends React.Component {
     if (trunfo) {
       return <p data-testid="trunfo-input">Você já tem um Super Trunfo em seu baralho</p>;
     }
-    console.log(trunfo);
     return (
       <label htmlFor="cardTrunfo" className="trunfo">
         <input

@@ -97,7 +97,6 @@ class App extends React.Component {
       cardImage, hasTrunfo, cardRare,
       cardTrunfo, data, isSaveButtonDisabled,
     } = this.state;
-    const arrayData = [...data];
     return (
       <div className="container-app">
         <div className="content">
@@ -133,7 +132,7 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <CardList arrayList={ arrayData } />
+          <CardList arrayList={ data } />
         </div>
       </div>
     );
