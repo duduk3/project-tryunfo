@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 import Card from './components/Card';
 import CardList from './components/CardList';
@@ -91,6 +92,16 @@ class App extends React.Component {
     return validTrunfo;
   }
 
+  removeItem = (key) => {
+    const { data } = this.state;
+    const exitCard = key;
+    const arrayData = data.filter((elem) => elem.cardName !== exitCard);
+    const trunfoValid = this.trunfoValidate();
+    trunfoValid
+      ? (this.setState({ data: [...arrayData], hasTrunfo: false }))
+      : (this.setState({ data: [...arrayData] }));
+  }
+
   render() {
     const { cardName, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
@@ -132,7 +143,10 @@ class App extends React.Component {
           </div>
         </div>
         <div>
-          <CardList arrayList={ data } />
+          <CardList
+            arrayList={ data }
+            btnRemove={ this.removeItem }
+          />
         </div>
       </div>
     );
