@@ -9,42 +9,40 @@ class CardList extends React.Component {
     this.state = {
       name: '',
       rarety: 'todas',
-      trunfo: false,
+      isTrunfo: false,
     };
   }
 
   changeFilter = ({ target }) => {
+    const { isTrunfo } = this.state;
     const { name, type, checked } = target;
     const value = type === 'checkbox' ? checked : target.value;
     this.setState({ [name]: value });
+    if (isTrunfo) {
+      return this.setState({ name: '', rarety: 'todas' });
+    }
   };
 
   filterList = (array) => {
-    const { name, rarety, trunfo } = this.state;
-    let arrayFilterRare = [...array];
-    let arrayFilterName = [...array];
-
-    if (trunfo) {
-      return array.filter((e) => e.cardTrunfo === trunfo);
-    }
-    if (name) {
-      arrayFilterName = array.filter((e) => e.cardName.includes(name));
-      return arrayFilterName;
+    const { name, rarety, isTrunfo } = this.state;
+    let arrayFilter = [...array];
+    if (isTrunfo) {
+      arrayFilter = array.filter((e) => e.cardTrunfo === isTrunfo);
     }
     if (rarety !== 'todas') {
-      arrayFilterRare = array.filter((e) => e.cardRare === rarety);
-      if (name) {
-        arrayFilterRare = array.filter((e) => e.cardName.includes(name));
-      }
-      return arrayFilterRare;
+      arrayFilter = array.filter((e) => e.cardRare === rarety);
     }
+    if (name !== '') {
+      arrayFilter = array.filter((e) => e.cardName.includes(name));
+    }
+    return arrayFilter;
   }
 
   render() {
     const { arrayList, btnRemove } = this.props;
     const dataFilter = this.filterList(arrayList);
     const showThis = dataFilter === undefined ? arrayList : dataFilter;
-    const { name, rarety, trunfo } = this.state;
+    const { name, rarety, isTrunfo } = this.state;
     return (
       <div className="list-container">
         <div>
@@ -73,10 +71,10 @@ class CardList extends React.Component {
             <label htmlFor="trunfo">
               <input
                 type="checkbox"
-                name="trunfo"
+                name="isTrunfo"
                 id="trunfo"
-                data-testid="rare-filter"
-                checked={ trunfo }
+                data-testid="trunfo-filter"
+                checked={ isTrunfo }
                 onChange={ this.changeFilter }
               />
               Super Trunfo
