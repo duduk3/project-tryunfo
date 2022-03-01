@@ -3,68 +3,101 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 class CardList extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     raridade: '',
-  //     superTrunfo: bool,
-  //     name: '',
-  //   };
-  // }
+    this.state = {
+      name: 'Nome da carta',
+      rarety: 'todas',
+      trunfo: false,
+    };
+  }
 
-  // inputChange = ({targe}) {
-  //   this.setState({ [name] })
-  // }
-
-  filterName = (event) => {
-    const { arrayList } = this.props;
-    // const arrayData = [...arrayList];
-    // this.setState({ [name]: value });
-    const arrayData = arrayList.filter((elem) => elem.name === event.target.value);
-    console.log(arrayData);
+  changeFilter = ({ target }) => {
+    const { name, type, checked } = target;
+    const value = type === 'checkbox' ? checked : target.value;
+    this.setState({ [name]: value });
   };
+
+  filterList = (array) => {
+    const { name, rarety, trunfo } = this.state;
+    if (trunfo) {
+      return array.filter((e) => e.cardTrunfo === trunfo);
+    }
+    if (rarety !== 'todas') {
+      return array.filter((e) => e.cardRare === rarety);
+    }
+    if (name !== 'Nome da carta') {
+      return array.filter((e) => e.cardName.includes(name));
+    }
+  }
 
   render() {
     const { arrayList, btnRemove } = this.props;
-    const arrayData = [...arrayList];
-
+    const dataFilter = this.filterList(arrayList);
+    const showThis = dataFilter === undefined ? arrayList : dataFilter;
+    const { name, rarety, trunfo } = this.state;
     return (
       <div className="list-container">
         <div>
-          <label htmlFor="filter-name">
-            Filtros de busca
+          <div>
+            <h1>Filtros de busca</h1>
             <input
               id="filter-name"
               name="name"
               data-testid="name-filter"
-              onChange={ this.filterName }
+              value={ name }
+              onChange={ this.changeFilter }
             />
-          </label>
+            <select
+              name="rarety"
+              data-testid="rare-filter"
+              id="rarety"
+              value={ rarety }
+              onChange={ this.changeFilter }
+            >
+              <option>todas</option>
+              <option>normal</option>
+              <option>raro</option>
+              <option>muito raro</option>
+            </select>
+            <label htmlFor="trunfo">
+              <input
+                type="checkbox"
+                name="trunfo"
+                id="trunfo"
+                data-testid="rare-filter"
+                checked={ trunfo }
+                onChange={ this.changeFilter }
+              />
+              Super Trunfo
+            </label>
+          </div>
         </div>
         <div className="list-content">
-          { arrayData.map((elem) => (
-            <div key={ elem.cardName }>
-              <Card
-                cardName={ elem.cardName }
-                cardDescription={ elem.cardDescription }
-                cardAttr1={ elem.cardAttr1 }
-                cardAttr2={ elem.cardAttr2 }
-                cardAttr3={ elem.cardAttr3 }
-                cardImage={ elem.cardImage }
-                cardRare={ elem.cardRare }
-                cardTrunfo={ elem.cardTrunfo }
-              />
-              <button
-                type="button"
-                data-testid="delete-button"
-                onClick={ () => btnRemove(elem.cardName) }
-              >
-                Excluir
-              </button>
-              {' '}
-            </div>
-          )) }
+          { showThis
+            .map((elem, index) => (
+              <div key={ elem.cardName + index }>
+                <Card
+                  cardName={ elem.cardName }
+                  cardDescription={ elem.cardDescription }
+                  cardAttr1={ elem.cardAttr1 }
+                  cardAttr2={ elem.cardAttr2 }
+                  cardAttr3={ elem.cardAttr3 }
+                  cardImage={ elem.cardImage }
+                  cardRare={ elem.cardRare }
+                  cardTrunfo={ elem.cardTrunfo }
+                />
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  onClick={ () => btnRemove(elem.cardName) }
+                >
+                  Excluir
+                </button>
+                {' '}
+              </div>
+            )) }
         </div>
       </div>
     );
