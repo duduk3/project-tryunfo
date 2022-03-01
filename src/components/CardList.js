@@ -7,7 +7,7 @@ class CardList extends React.Component {
     super(props);
 
     this.state = {
-      name: 'Nome da carta',
+      name: '',
       rarety: 'todas',
       trunfo: false,
     };
@@ -21,14 +21,22 @@ class CardList extends React.Component {
 
   filterList = (array) => {
     const { name, rarety, trunfo } = this.state;
+    let arrayFilterRare = [...array];
+    let arrayFilterName = [...array];
+
     if (trunfo) {
       return array.filter((e) => e.cardTrunfo === trunfo);
     }
-    if (rarety !== 'todas') {
-      return array.filter((e) => e.cardRare === rarety);
+    if (name) {
+      arrayFilterName = array.filter((e) => e.cardName.includes(name));
+      return arrayFilterName;
     }
-    if (name !== 'Nome da carta') {
-      return array.filter((e) => e.cardName.includes(name));
+    if (rarety !== 'todas') {
+      arrayFilterRare = array.filter((e) => e.cardRare === rarety);
+      if (name) {
+        arrayFilterRare = array.filter((e) => e.cardName.includes(name));
+      }
+      return arrayFilterRare;
     }
   }
 
@@ -45,6 +53,7 @@ class CardList extends React.Component {
             <input
               id="filter-name"
               name="name"
+              type="text"
               data-testid="name-filter"
               value={ name }
               onChange={ this.changeFilter }
