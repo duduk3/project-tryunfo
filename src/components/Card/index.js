@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './index.css';
 
 class Card extends React.Component {
   render() {
@@ -14,8 +15,8 @@ class Card extends React.Component {
           <section>
             <h2 data-testid="name-card">{cardName}</h2>
             <img
-              src={ cardImage }
-              alt={ cardName }
+              src={cardImage}
+              alt={cardName}
               data-testid="image-card"
               className="image"
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Card from './Card';
+import Card from '../Card';
+import './index.css';
 
 class CardList extends React.Component {
   constructor(props) {
@@ -53,15 +54,15 @@ class CardList extends React.Component {
               name="name"
               type="text"
               data-testid="name-filter"
-              value={ name }
-              onChange={ this.changeFilter }
+              value={name}
+              onChange={this.changeFilter}
             />
             <select
               name="rarety"
               data-testid="rare-filter"
               id="rarety"
-              value={ rarety }
-              onChange={ this.changeFilter }
+              value={rarety}
+              onChange={this.changeFilter}
             >
               <option>todas</option>
               <option>normal</option>
@@ -74,37 +75,37 @@ class CardList extends React.Component {
                 name="isTrunfo"
                 id="trunfo"
                 data-testid="trunfo-filter"
-                checked={ isTrunfo }
-                onChange={ this.changeFilter }
+                checked={isTrunfo}
+                onChange={this.changeFilter}
               />
               Super Trunfo
             </label>
           </div>
         </div>
         <div className="list-content">
-          { showThis
+          {showThis
             .map((elem, index) => (
-              <div key={ elem.cardName + index }>
+              <div key={elem.cardName + index}>
                 <Card
-                  cardName={ elem.cardName }
-                  cardDescription={ elem.cardDescription }
-                  cardAttr1={ elem.cardAttr1 }
-                  cardAttr2={ elem.cardAttr2 }
-                  cardAttr3={ elem.cardAttr3 }
-                  cardImage={ elem.cardImage }
-                  cardRare={ elem.cardRare }
-                  cardTrunfo={ elem.cardTrunfo }
+                  cardName={elem.cardName}
+                  cardDescription={elem.cardDescription}
+                  cardAttr1={elem.cardAttr1}
+                  cardAttr2={elem.cardAttr2}
+                  cardAttr3={elem.cardAttr3}
+                  cardImage={elem.cardImage}
+                  cardRare={elem.cardRare}
+                  cardTrunfo={elem.cardTrunfo}
                 />
                 <button
                   type="button"
                   data-testid="delete-button"
-                  onClick={ () => btnRemove(elem.cardName) }
+                  onClick={() => btnRemove(elem.cardName)}
                 >
                   Excluir
                 </button>
                 {' '}
               </div>
-            )) }
+            ))}
         </div>
       </div>
     );

@@ -62,7 +62,8 @@ class App extends React.Component {
       cardAttr1, cardAttr2, cardAttr3, cardRare } = this.state;
     // evita o padrão para não apagar os dados e manter o card na tela
     event.preventDefault();
-    const prevData = { cardName,
+    const prevData = {
+      cardName,
       cardDescription,
       cardImage,
       cardAttr1,
@@ -70,7 +71,8 @@ class App extends React.Component {
       cardAttr3,
       cardTrunfo,
       hasTrunfo: cardTrunfo,
-      cardRare };
+      cardRare
+    };
     this.setState((prev) => ({ data: [...prev.data, prevData] }));
     // reset no state limpando form para novo preenchimento
     this.setState({
@@ -116,38 +118,38 @@ class App extends React.Component {
           <div>
             <h1>Adicionar nova carta</h1>
             <Form
-              cardName={ cardName }
-              cardDescription={ cardDescription }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardImage={ cardImage }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
-              hasTrunfo={ hasTrunfo }
-              onInputChange={ this.handleChange }
-              isSaveButtonDisabled={ isSaveButtonDisabled }
-              onSaveButtonClick={ this.onSubmit }
+              cardName={cardName}
+              cardDescription={cardDescription}
+              cardAttr1={cardAttr1}
+              cardAttr2={cardAttr2}
+              cardAttr3={cardAttr3}
+              cardImage={cardImage}
+              cardRare={cardRare}
+              cardTrunfo={cardTrunfo}
+              hasTrunfo={hasTrunfo}
+              onInputChange={this.handleChange}
+              isSaveButtonDisabled={isSaveButtonDisabled}
+              onSaveButtonClick={this.onSubmit}
             />
           </div>
           <div>
             <h1>Pŕe Visulalização</h1>
             <Card
-              cardName={ cardName }
-              cardDescription={ cardDescription }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardImage={ cardImage }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
+              cardName={cardName}
+              cardDescription={cardDescription}
+              cardAttr1={cardAttr1}
+              cardAttr2={cardAttr2}
+              cardAttr3={cardAttr3}
+              cardImage={cardImage}
+              cardRare={cardRare}
+              cardTrunfo={cardTrunfo}
             />
           </div>
         </div>
-        <div>
+        <div className='content'>
           <CardList
-            arrayList={ data }
-            btnRemove={ this.removeItem }
+            arrayList={data}
+            btnRemove={this.removeItem}
           />
         </div>
       </div>
