@@ -53,13 +53,11 @@ class CardList extends React.Component {
               id="filter-name"
               name="name"
               type="text"
-              data-testid="name-filter"
               value={name}
               onChange={this.changeFilter}
             />
             <select
               name="rarety"
-              data-testid="rare-filter"
               id="rarety"
               value={rarety}
               onChange={this.changeFilter}
@@ -74,7 +72,6 @@ class CardList extends React.Component {
                 type="checkbox"
                 name="isTrunfo"
                 id="trunfo"
-                data-testid="trunfo-filter"
                 checked={isTrunfo}
                 onChange={this.changeFilter}
               />
@@ -98,7 +95,6 @@ class CardList extends React.Component {
                 />
                 <button
                   type="button"
-                  data-testid="delete-button"
                   onClick={() => btnRemove(elem.cardName)}
                 >
                   Excluir

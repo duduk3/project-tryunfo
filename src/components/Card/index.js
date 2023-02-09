@@ -13,28 +13,27 @@ class Card extends React.Component {
       <div className="card-container">
         <div className="card-content">
           <section>
-            <h2 data-testid="name-card">{cardName}</h2>
+            <h2>{cardName}</h2>
             <img
               src={cardImage}
               alt={cardName}
-              data-testid="image-card"
               className="image"
             />
-            {cardTrunfo && <p className="st" data-testid="trunfo-card">Super Trunfo</p>}
+            {cardTrunfo && <p className="st">Super Trunfo</p>}
           </section>
-          <p data-testid="description-card">{cardDescription}</p>
+          <p>{cardDescription}</p>
           <div>
             <div>
-              {cardAttr1 && <p data-testid="attr1-card">{`força.......${cardAttr1}`}</p>}
+              {cardAttr1 && <p>{`força.......${cardAttr1}`}</p>}
             </div>
             <div>
-              {cardAttr2 && <p data-testid="attr2-card">{`rapidez......${cardAttr2}`}</p>}
+              {cardAttr2 && <p>{`rapidez......${cardAttr2}`}</p>}
             </div>
             <div>
-              {cardAttr3 && <p data-testid="attr3-card">{`cérebro......${cardAttr3}`}</p>}
+              {cardAttr3 && <p>{`cérebro......${cardAttr3}`}</p>}
             </div>
           </div>
-          {cardName && <p data-testid="rare-card">{cardRare}</p>}
+          {cardName && <p>{cardRare}</p>}
         </div>
       </div>
     );

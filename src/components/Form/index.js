@@ -5,7 +5,7 @@ import './index.css';
 class Form extends React.Component {
   optionTrunfo = (trunfo, cardTrunfo, onInputChange) => {
     if (trunfo) {
-      return <p data-testid="trunfo-input">Você já tem um Super Trunfo em seu baralho</p>;
+      return <p>Você já tem um Super Trunfo em seu baralho</p>;
     }
     return (
       <label htmlFor="cardTrunfo" className="trunfo">
@@ -13,7 +13,6 @@ class Form extends React.Component {
           type="checkbox"
           id="cardTrunfo"
           name="cardTrunfo"
-          data-testid="trunfo-input"
           checked={cardTrunfo}
           onChange={onInputChange}
         />
@@ -37,7 +36,6 @@ class Form extends React.Component {
             id="name"
             name="cardName"
             type="text"
-            data-testid="name-input"
             value={cardName}
             onChange={onInputChange}
           />
@@ -46,7 +44,6 @@ class Form extends React.Component {
           Descrição
           <textarea
             name="cardDescription"
-            data-testid="description-input"
             value={cardDescription}
             onChange={onInputChange}
           />
@@ -60,7 +57,6 @@ class Form extends React.Component {
               type="number"
               max="90"
               min="0"
-              data-testid="attr1-input"
               value={cardAttr1}
               onChange={onInputChange}
             />
@@ -75,7 +71,6 @@ class Form extends React.Component {
               type="number"
               max="90"
               min="0"
-              data-testid="attr2-input"
               value={cardAttr2}
               onChange={onInputChange}
             />
@@ -90,7 +85,6 @@ class Form extends React.Component {
               type="number"
               max="90"
               min="0"
-              data-testid="attr3-input"
               value={cardAttr3}
               onChange={onInputChange}
             />
@@ -103,7 +97,6 @@ class Form extends React.Component {
               id="cardImage"
               name="cardImage"
               type="text"
-              data-testid="image-input"
               value={cardImage}
               onChange={onInputChange}
             />
@@ -113,7 +106,6 @@ class Form extends React.Component {
           Raridade:
           <select
             name="cardRare"
-            data-testid="rare-input"
             id="rare"
             value={cardRare}
             onChange={onInputChange}
@@ -128,7 +120,6 @@ class Form extends React.Component {
         </div>
         <button
           type="button"
-          data-testid="save-button"
           disabled={isSaveButtonDisabled}
           onClick={onSaveButtonClick}
         >
