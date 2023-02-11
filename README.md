@@ -30,8 +30,8 @@
   - **e muito mais**
 </details>
 
-<b>😉A paixão pelo React vai indo muito bem, facilitou demais! :technologist:</b>
+<b>😉 😍A paixão pelo React vai indo muito bem, facilitou demais! :technologist:</b>
 
 
 
-### I :hearth: React! :rocket: 
+### I 💘 React! :rocket: 
