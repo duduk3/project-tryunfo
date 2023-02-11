@@ -52,6 +52,13 @@
     word-break: break-word;
 }
 
+.description p {
+    padding: 0 4px 0 8px;
+    color: rgb(6, 88, 6);
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .description-z {
     display: flex;
     align-items: center;
@@ -64,6 +71,13 @@
     margin: -50px -10px 0;
     background-color: rgb(255, 255, 255);
     word-break: break-word;
+}
+
+.description-z p {
+    padding: 0 4px 0 8px;
+    color: rgb(6, 88, 6);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .att {
