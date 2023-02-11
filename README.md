@@ -1,13 +1,37 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Projeto Tryunfo - onde o player monta suas cartas com a imagem, atributos e características de um personagem ou objeto! :rocket:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## Desenvolvendo habilidades com o React.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+### Fizemos bastante o uso de props, states e form para montar o baralho e este foi o conteúdo do bloco 3 de Frontend no curso da Trybe. 
+
+<details>
+  <summary>
+    <b>📌Praticamos muito da componentização do react e o css:</b>
+  </summary>
+  
+  - **1** modularizando os componentes 
+  - **2** criando formulário para enviar os dados
+  - **3** validando alguns dados recebidos de input
+  - **4** transferindo dados para outros componentes com as props
+  - **5** salvando os cartões montados que são apresentados logo abaixo    
+  - **6** filtrando os cartões montados por nome ou buscando por super trunfo  
+  - **7** dividindo o css em cada um dos componentes para estilizar a página 
+  - **obs:** se quiser testar o projeto você precisará baixál-lo, instalar as dependências(npm install) e depois poderá rodar (npm start ) para ver no navegador. 
+</details>
+
+<details>
+  <summary>
+    <b>📌 Para ir além, você pode:</b>
+  </summary>
+
+  - **Criando um jogo com os cartões prontos**
+  - **enbaralhando os cards salvos com funções random**
+  - **inserir pontuação**
+  - **e muito mais**
+</details>
+
+<b>😉A paixão pelo React vai indo muito bem, facilitou demais! :tecnologist:</b>
+
+
+
+### I :hearth: React! :rocket: 
