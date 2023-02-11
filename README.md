@@ -30,7 +30,7 @@
   - **e muito mais**
 </details>
 
-<b>😉A paixão pelo React vai indo muito bem, facilitou demais! :tecnologist:</b>
+<b>😉A paixão pelo React vai indo muito bem, facilitou demais! :technologist:</b>
 
 
 
