@@ -132,8 +132,8 @@ class App extends React.Component {
               onSaveButtonClick={this.onSubmit}
             />
           </div>
-          <div>
-            <h1>Pŕe Visulalização</h1>
+          <div className='content1'>
+            <h1>Pré Visualização</h1>
             <Card
               cardName={cardName}
               cardDescription={cardDescription}
@@ -146,7 +146,7 @@ class App extends React.Component {
             />
           </div>
         </div>
-        <div className='content'>
+        <div className='content2'>
           <CardList
             arrayList={data}
             btnRemove={this.removeItem}

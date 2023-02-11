@@ -12,30 +12,67 @@ class Card extends React.Component {
     return (
       <div className="card-container">
         <div className="card-content">
-          <section>
-            <h2>{cardName}</h2>
+          <h3 className='name' style={{ color: '#fff' }}>{cardName}</h3>
+          <div className="img-content">
             <img
               src={cardImage}
               alt={cardName}
               className="image"
             />
-            {cardTrunfo && <p className="st">Super Trunfo</p>}
-          </section>
-          <p>{cardDescription}</p>
-          <div>
-            <div>
-              {cardAttr1 && <p>{`força.......${cardAttr1}`}</p>}
-            </div>
-            <div>
-              {cardAttr2 && <p>{`rapidez......${cardAttr2}`}</p>}
-            </div>
-            <div>
-              {cardAttr3 && <p>{`cérebro......${cardAttr3}`}</p>}
-            </div>
           </div>
-          {cardName && <p>{cardRare}</p>}
+          <div>
+            {cardTrunfo ? <div>
+              <div className='st'> <p>Super Trunfo</p> </div>
+              <div className='description'>
+                <p>{cardDescription}</p>
+              </div>
+              <div className='att'>
+                <div className='name'>
+                  {cardAttr1 && <p>{`força  ............................................  ${cardAttr1}`}</p>}
+                </div>
+                <div className='name'>
+                  {cardAttr2 && <p>{`rapidez  .......................................  ${cardAttr2}`}</p>}
+                </div>
+                <div className='name'>
+                  {cardAttr3 && <p>{`cérebro  .......................................  ${cardAttr3}`}</p>}
+                </div>
+                <div className='name'>
+                  {cardName
+                    && <p
+                      style={{ color: 'red', fontWeight: '900' }}>
+                      {`raridade  --------  ${cardRare}`}
+                    </p>}
+                </div>
+              </div>            </div>
+              : <div>
+                <div className='std'> <p></p> </div>
+                <div className='description-z'>
+                  <p>{cardDescription}</p>
+                </div>
+                <div className='att-z'>
+                  <div className='name'>
+                    {cardAttr1 && <p>{`força  ............................................  ${cardAttr1}`}</p>}
+                  </div>
+                  <div className='name'>
+                    {cardAttr2 && <p>{`rapidez  .......................................  ${cardAttr2}`}</p>}
+                  </div>
+                  <div className='name'>
+                    {cardAttr3 && <p>{`cérebro  .......................................  ${cardAttr3}`}</p>}
+                  </div>
+                  <div className='name'>
+                    {cardName
+                      && <p
+                        style={{ color: 'red', fontWeight: '900' }}>
+                        {`raridade  --------  ${cardRare}`}
+                      </p>}
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+
         </div>
-      </div>
+      </div >
     );
   }
 }

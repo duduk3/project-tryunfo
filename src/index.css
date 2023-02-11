@@ -25,7 +25,18 @@ code {
   background-color: rgb(211, 206, 189);
 }
 
+.content1 {
+  height: 100vh;
+  background-color: rgb(211, 206, 189);
+}
+
 .content h1 {
   margin: 10px 5px 30px 25px;
   color: rgba(0, 0, 0, 0.5)
+}
+
+.content2 {
+  display: flex;
+  width: 100%;
+  background-color: rgb(202, 160, 24);
 }
